@@ -1,0 +1,355 @@
+[
+  {
+    "id": "2605.16481",
+    "title": "Visual Agentic Memory: Enabling Online Long Video Understanding via Online Indexing, Hierarchical Memory, and Agentic Retrieval",
+    "authors": "Aiden Yiliu Li, Nels Numan, Anthony Steed",
+    "abstract": "Long video understanding requires more than large context windows. It also needs a memory mechanism that decides what visual evidence to retain, keeps it searchable over long horizons, and grounds later reasoning in recoverable observations rather than compressed latent state alone. We propose Visual Agentic Memory (VAM), a training-free framework with three components. Online Indexing supports selective evidence retention under streaming constraints. Hierarchical Memory organises retained evidence in a Parallel Representation that aligns temporal context with spatial observations. Agentic Retrieval searches, inspects, and verifies candidate evidence before producing a grounded answer. On OVO-Bench, VAM achieves the highest RT+BT average (68.41) across all reported baselines, improving over end-to-end use of the same underlying MLLM (Gemini 3 Flash, 67.46). On the month-scale split of MM-Lifelong train@month (105.6 hours over 51 days), VAM reaches 17.11%, second only to ReMA with GPT-5 (17.62%). These results suggest that long-horizon video understanding benefits from treating visual memory as an explicit, inspectable, and queryable substrate. Code is available at https://github.com/yiliu-li/Visual-Agentic-Memory.",
+    "date": "2026-05-15",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "abs:\"agent\" AND abs:\"video understanding\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 13
+  },
+  {
+    "id": "2605.13228",
+    "title": "ReTool-Video: Recursive Tool-Using Video Agents with Meta-Augmented Tool Grounding",
+    "authors": "Xiao Liu, Nayu Liu, Junnan Zhu, Ruirui Chen, Guohui Xiang",
+    "abstract": "Video understanding requires active evidence seeking, motivating tool-augmented video agents for temporal reasoning, cross-modal understanding, and complex question answering. Existing video agents have improved video reasoning with retrieval, memory, frame inspection, and verifier tools, but they still face two limitations: (1) a coarse tool space that lacks fine-grained operations for compositional reasoning; and (2) a flat action space that forces high-level video intents into primitive executable tool calls. In this paper, we address these challenges with two complementary designs. First, we construct a MetaAug-Video Tool Library (MVTL), an extensible tool library with 134 registered tools, including 26 base tools for general multimodal signal processing and 108 meta tools for filtering, aggregation, reranking, formatting, and other intermediate-result operations. MVTL supports dual-level access to both structured video information and raw modal evidence, enabling diverse video reasoning scenarios. Second, we propose ReTool-Video, a recursive tool-using method that grounds high-level video intents into executable tool chains. In ReTool-Video, matched actions are executed directly, while unmatched intents are delegated to a resolver for parameter repair, tool substitution, or decomposition. This allows abstract actions such as temporal merging, cross-modal verification, or repeated-event aggregation to be progressively translated into concrete multimodal operations at runtime. Experiments on MVBench, MLVU, and Video-MME w/o sub. show that ReTool-Video consistently outperforms strong baselines. Further analysis demonstrates that recursive grounding and fine-grained meta tools improve the stability and effectiveness of complex video understanding.",
+    "date": "2026-05-13",
+    "matched_queries": [
+      "abs:\"video agent\"",
+      "abs:\"agent\" AND abs:\"video understanding\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 11
+  },
+  {
+    "id": "2605.12571",
+    "title": "VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority",
+    "authors": "Chenhao Qiu, Yechao Zhang, Xin Luo, Shien Song, Xusheng Liu",
+    "abstract": "Long video question answering requires locating sparse, time-scattered visual evidence within highly redundant content. Although current MLLMs perform well on short videos, long videos introduce long-horizon search and verification, which often necessitates multi-turn, agentic interaction. We show that existing LVU agents can exhibit \"evidence misalignment\": they produce correct answers that are not supported by the retrieved or inspected evidence. To characterize this failure, we introduce two diagnostics (temporal groundedness and semantic groundedness) and use them to reveal two pressures that amplify misalignment: prompt pressure from shared-context saturation at inference time and reward pressure from outcome-only optimization during training. These findings point to a structural root cause: the coupled agent paradigm conflates long-horizon planning with answer authority. We therefore propose the decoupled planner-inspector framework, which separates planning from answer authority and gates final answering on pixel-level verification. Across four long-video benchmarks, our framework improves both answer accuracy and evidence alignment, achieving 55.1% on LVBench and 62.0% on LongVideoBench while producing interpretable search trajectories. Moreover, the decoupled architecture scales consistently with increased search budgets and supports plug-and-play upgrades of the MLLM backbone without retraining the planner. Code and models are available at https://github.com/Echochef/VideoSEAL.",
+    "date": "2026-05-12",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "abs:\"agent\" AND abs:\"video question answering\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 11
+  },
+  {
+    "id": "2605.09874",
+    "title": "EgoMemReason: A Memory-Driven Reasoning Benchmark for Long-Horizon Egocentric Video Understanding",
+    "authors": "Ziyang Wang, Yue Zhang, Shoubin Yu, Ce Zhang, Zengqi Zhao",
+    "abstract": "Next-generation visual assistants, such as smart glasses, embodied agents, and always-on life-logging systems, must reason over an entire day or more of continuous visual experience. In ultra-long video settings, relevant information is sparsely distributed across hours or days, making memory a fundamental challenge: models must accumulate information over time, recall prior states, track temporal order, and abstract recurring patterns. However, existing week-long video benchmarks are primarily designed for perception and recognition, such as moment localization or global summarization, rather than reasoning that requires integrating evidence across multiple days. To address this gap, we introduce EgoMemReason, a comprehensive benchmark that systematically evaluates week-long egocentric video understanding through memory-driven reasoning. EgoMemReason evaluates three complementary memory types: entity memory, tracking how object states evolve and change across days; event memory, recalling and ordering activities separated by hours or days; and behavior memory, abstracting recurring patterns from sparse, repeated observations over the whole week period. EgoMemReason comprises 500 questions across three memory types and six core challenges, with an average of 5.1 video segments of evidence per question and 25.9 hours of memory backtracking. We evaluate EgoMemReason on 17 methods across MLLMs and agentic frameworks, revealing that even the best model achieves only 39.6% overall accuracy. Further analysis shows that the three memory types fail for distinct reasons and that performance degrades as evidence spans longer temporal horizons, revealing that long-horizon memory remains far from solved. We believe EgoMemReason establishes a strong foundation for evaluating and advancing long-context, memory-aware multimodal systems.",
+    "date": "2026-05-11",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "abs:\"agent\" AND abs:\"video understanding\""
+    ],
+    "score": 11
+  },
+  {
+    "id": "2605.18176",
+    "title": "MARS: Technical Report for the CASTLE Challenge at EgoVis 2026",
+    "authors": "Haoyu Zhang, Qiaohui Chu, Yisen Feng, Meng Liu, Weili Guan",
+    "abstract": "This report presents MARS, short for Multimodal Agentic Reasoning with Source selection, our system for the CASTLE Challenge at EgoVis 2026. Participants must answer 185 closed-form questions over the CASTLE 2024 dataset. In contrast to prior single-video egocentric benchmarks, CASTLE requires reasoning over four days of activity, 15 synchronized perspectives, official transcripts, and multiple auxiliary modalities, including personal photos, auxiliary videos, gaze, thermal imagery, and heartrate measurements. MARS therefore treats the task as an agentic evidence-selection problem over multimodal sources rather than a purely text-only pipeline. MARS first follows the official CASTLE directory organization to build evidence memories from two primary sources, videos and transcripts, and four auxiliary sources, gaze, heartrate, photos, and thermal imagery. Long videos are converted into captions and DeepSeek-based summaries only because CASTLE videos are too long to fit directly into the model context for every question; this step compresses temporal evidence while keeping photos and other auxiliary media available as source-specific evidence. At inference time, a GPT-5.4 decision agent repeatedly chooses whether to continue reasoning, request a specific missing modality, produce an answer, or fall back to a random option when the evidence remains insufficient. The resulting system achieved second place on the final CASTLE Challenge leaderboard. Our codes are available at https://github.com/Hyu-Zhang/MARS.",
+    "date": "2026-05-18",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "abs:\"multimodal agent\" AND abs:\"video\""
+    ],
+    "score": 10
+  },
+  {
+    "id": "2605.08271",
+    "title": "Bridging Modalities, Spanning Time: Structured Memory for Ultra-Long Agentic Video Reasoning",
+    "authors": "Jiazheng Li, Chi-Hao Wu, Yunze Liu, Kaize Ding, Jundong Li",
+    "abstract": "Understanding ultra-long videos such as egocentric recordings, live streams, or surveillance footage spanning days to weeks, remains a challenge. For current multimodal LLMs: even with million-token context windows, frame budgets cover only tens of minutes of densely sampled video, and most evidence is discarded before inference begins. Memory-augmented and agentic approaches help with scale, but their retrieval remains fragmented across modalities and lacks long-range narrative summaries that span days or weeks. We propose \\textbf{MAGIC-Video}, a training-free framework built around a multimodal memory graph with interleaved narrative chain: the graph unifies episodic, semantic, and visual content through six typed edges and supports cross-modal retrieval, while the chain distils long-horizon entity biographies and recurring activity events. At inference time, an agentic loop interleaves graph retrieval with narrative fact injection, covering both the modality and time dimensions of ultra-long video in a single retrieval pipeline. On EgoLifeQA, Ego-R1 and MM-Lifelong, MAGIC-Video consistently outperforms strong general-purpose, long-video, and agentic baselines, with gains of 10.1, 7.4, and 5.9 points over the prior best agentic system on each benchmark. Code is available at https://github.com/lijiazheng0917/MAGIC-video.",
+    "date": "2026-05-08",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 10
+  },
+  {
+    "id": "2605.05640",
+    "title": "AffectSeek: Agentic Affective Understanding in Long Videos under Vague User Queries",
+    "authors": "Zhen Zhang, Yuhang Yang, Yunxiang Jiang, Yuhuan Lu, Haifeng Lu",
+    "abstract": "Existing affective understanding studies have mainly focused on recognizing emotions from images, audio signals, or pre-cliped video clips, where the affective evidence is already given. This passive and clip-centered setting does not fully reflect real-world scenarios, in which users often interact with long videos and express their needs through natural-language queries. In this paper, we study \\textbf{Vague-Query-driven video Affective Understanding (VQAU)}, a new task that requires models to localize affective moments in long videos, predict their emotion categories, and generate evidence-grounded rationales under vague user queries. To support this task, we construct \\textbf{VQAU-Bench}, a benchmark that integrates long videos, vague affective queries, temporal clip annotations, emotion labels, and rationale explanations into a unified evaluation framework. VQAU-Bench enables systematic assessment of semantic-temporal-affective alignment, affective moment localization, emotion classification, and rationale generation. To address the multi-step reasoning challenges of VQAU, we further propose \\textbf{AffectSeek}, an agentic framework that actively seeks, verifies, and explains affective moments in long videos. AffectSeek decomposes VQAU into intent interpretation, candidate localization, clip verification, emotion reasoning, and rationale generation, and progressively aligns vague user intent with long-video evidence through role-specialized reasoning and cross-stage verification. Experiments show that VQAU remains challenging for existing affective recognition models and single-step vision-language models, while AffectSeek provides a simple yet effective framework for agentic long-video affective understanding.",
+    "date": "2026-05-07",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 10
+  },
+  {
+    "id": "2605.18748",
+    "title": "Aurora: Unified Video Editing with a Tool-Using Agent",
+    "authors": "Yongsheng Yu, Ziyun Zeng, Zhiyuan Xiao, Zhenghong Zhou, Hang Hua",
+    "abstract": "Recent video editing models have converged on a unified conditioning design: a single diffusion transformer jointly consumes text, source video, and reference images, and one set of weights covers replacement, removal, style transfer, and reference-driven insertion. The design is flexible, but it assumes that the user already provides model-ready text, reference images, and spatial grounding for local edits, which real requests often omit. We present Aurora, an agentic video editing framework that pairs a tool-augmented vision-language model (VLM) agent with a unified video diffusion transformer. The VLM agent maps a raw user request to a structured edit plan aligned with the transformer's conditioning channels, thereby resolving textual and visual underspecification before generation. We train the VLM agent with supervised data for complete edit planning and reference-image selection, together with preference pairs for robust tool use and instruction refinement. We introduce AgentEdit-Bench to evaluate agent-enhanced video editing under textual and visual underspecification. Experiments on AgentEdit-Bench and two existing video editing benchmarks show that Aurora improves over instruction-only baselines and that the VLM agent transfers to compatible frozen video editing models. Project page: https://yeates.github.io/Aurora-Page",
+    "date": "2026-05-18",
+    "matched_queries": [
+      "abs:\"agentic video\"",
+      "ti:\"video\" AND ti:\"agent\"",
+      "abs:\"vlm agent\" AND abs:\"video\""
+    ],
+    "score": 9
+  },
+  {
+    "id": "2605.06924",
+    "title": "A$^2$RD: Agentic Autoregressive Diffusion for Long Video Consistency",
+    "authors": "Do Xuan Long, Yale Song, Min-Yen Kan, Tomas Pfister, Long T. Le",
+    "abstract": "Synthesizing consistent and coherent long video remains a fundamental challenge. Existing methods suffer from semantic drift and narrative collapse over long horizons. We present A$^2$RD, an Agentic Auto-Regressive Diffusion architecture that decouples creative synthesis from consistency enforcement. A$^2$RD formulates long video synthesis as a closed-loop process that synthesizes and self-improves video segment-by-segment through a Retrieve--Synthesize--Refine--Update cycle. It comprises three core components: (i) Multimodal Video Memory that tracks video progression across modalities; (ii) Adaptive Segment Generation that switches among generation modes for natural progression and visual consistency; and (iii) Hierarchical Test-Time Self-Improvement that self-improves each segment at frame and video levels to prevent error propagation. We further introduce LVBench-C, a challenging benchmark with non-linear entity and environment transitions to stress-test long-horizon consistency. Across public and LVBench-C benchmarks spanning one- to ten-minute videos, A$^2$RD outperforms state-of-the-art baselines by up to 30% in consistency and 20% in narrative coherence. Human evaluations corroborate these gains while also highlighting notable improvements in motion and transition smoothness.",
+    "date": "2026-05-07",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 9
+  },
+  {
+    "id": "2605.16079",
+    "title": "VideoSeeker: Incentivizing Instance-level Video Understanding via Native Agentic Tool Invocation",
+    "authors": "Yiming Zhao, Yu Zeng, Wenxuan Huang, Zhen Fang, Qing Miao",
+    "abstract": "Large Vision-Language Models (LVLMs) have shown significant progress in video understanding, yet they face substantial challenges in tasks requiring precise spatiotemporal localization at the instance level. Existing methods primarily rely on text prompts for human-model interaction, but these prompts struggle to provide precise spatial and temporal references, resulting in poor user experience. Furthermore, current approaches typically decouple visual perception from language reasoning, centering reasoning around language rather than visual content, which limits the model's ability to proactively perceive fine-grained visual evidence. To address these challenges, we propose VideoSeeker, a novel paradigm for instance-level video understanding through visual prompts. VideoSeeker seamlessly integrates agentic reasoning with instance-level video understanding tasks, enabling the model to proactively perceive and retrieve relevant video segments on demand. We construct a four-stage fully automated data synthesis pipeline to efficiently generate large-scale, high-quality instance-level video data. We internalize tool-calling and proactive perception capabilities into the model via cold-start supervision and RL training, building a powerful video understanding model. Experiments demonstrate that our model achieves an average improvement of +13.7% over baselines on instance-level video understanding tasks, surpassing powerful closed-source models such as GPT-4o and Gemini-2.5-Pro, while also showing effective transferability on general video understanding benchmarks. The relevant datasets and code will be released publicly.",
+    "date": "2026-05-15",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"video understanding\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 9
+  },
+  {
+    "id": "2605.21917",
+    "title": "MAVEN: A Multi-stage Agentic Annotation Pipeline for Video Reasoning Tasks",
+    "authors": "Han Zhang, Wanting Jiang, Tomasz Kornuta, Tian Zheng, Vidya Murali",
+    "abstract": "Training Vision Language Models (VLMs) for video event reasoning requires high-quality structured annotations capturing not only what happened, but when, where, why, and with what consequence, at a scale manual labelling cannot support. We present MAVEN (Multi-stage Agentic Video Event aNnotation), a multi-stage agentic pipeline that turns raw videos into multi-task training data with Chain-of-Thought (CoT) reasoning traces, organized around a designated Event of Focus. At its core, MAVEN synthesizes a Multi-Scale Spatio-Temporal Event Description (MSTED) from three complementary caption levels; this explicit intermediate serves as the sole input to downstream Q&A generation across multiple task formats. Crucially, MAVEN supports agent-driven domain adaptation: given a new video dataset and target question examples, the agent redesigns all prompts top-down without manual re-engineering. A hierarchical refinement loop further classifies annotation errors against a taxonomy, traces root causes to the originating pipeline stage, and applies targeted edits that rewrite prompts or modify the pipeline structure itself, iteratively improving data quality. We apply MAVEN to label over 5,300 traffic videos and fine-tune Cosmos-Reason2-8B on the resulting data. On a private CCTV evaluation set, fine-tuning surpasses both Gemini 2.5 Pro and 3.1 Flash, including a $+38.8$-point gain in MCQ accuracy over zero-shot. On AccidentBench, CCTV-only training lifts Cosmos-Reason2 by $+10.7$ MCQ points and matches Gemini 2.5 Pro despite seeing no dashcam videos; adding agent-adapted dashcam annotations narrows the gap to Gemini 3.1 Flash, and RL post-training pushes overall performance past both Gemini baselines. Qualitative results on warehouse surveillance and public safety videos further show the agentic workflow readily adapts the pipeline to new domains.",
+    "date": "2026-05-21",
+    "matched_queries": [
+      "abs:\"agentic video\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 8
+  },
+  {
+    "id": "2605.20342",
+    "title": "ParaVT: Taming the Tool Prior Paradox for Parallel Tool Use in Agentic Video Reinforcement Learning",
+    "authors": "Zuhao Yang, Kaichen Zhang, Sudong Wang, Keming Wu, Zhongyu Yang",
+    "abstract": "Training large multimodal models (LMMs) via reinforcement learning (RL) to natively invoke video-processing tools (e.g., cropping) has become a promising route to long-video understanding. However, existing native-RL methods dispatch tool calls sequentially (i.e., one per turn): a single wrong crop propagates errors without peer correction, multi-turn tool calls corrupt context, and inference cost scales linearly with the number of turns. We introduce ParaVT, the first multi-agent end-to-end RL-trained framework for Parallel Video Tool calling, dispatching multiple time-window crops in a single turn for cleaner context and better fault tolerance. Yet applying standard RL to ParaVT reveals an obstacle we term the Tool Prior Paradox: the pretrained tool priors that enable tool exploration also destabilize cold-started structural format and expose the skip-tool reward shortcut under temperature sampling. A cross-model contrast on a weaker-prior LMM supports this claim: format stays stable but RL elicits zero tool calls, indicating that prior strength is the shared driver of both format collapse and tool exploration. We propose PARA-GRPO (Parseability-Anchored and Ratio-gAted GRPO), which augments standard RL with two complementary mechanisms: (i) a targeted format reward applied only at the structural-token positions most prone to collapse, and (ii) a per-prompt frame-budget randomization that creates training prompts where calling the tool yields a measurable reward signal over skipping it. Across six long-video understanding benchmarks, ParaVT improves over the Qwen3-VL baseline by +7.9% on average, with PARA-GRPO lifting training-time format compliance from 0.13 to 0.64. As tool capabilities become increasingly internalized in modern LMMs, RL must cooperate with the resulting priors, and ParaVT offers a general recipe for agentic RL. Code, data, and model weights are publicly available.",
+    "date": "2026-05-19",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "abs:\"agent\" AND abs:\"video understanding\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 8
+  },
+  {
+    "id": "2605.13831",
+    "title": "Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context",
+    "authors": "Zhaowei Wang, Lishu Luo, Haodong Duan, Weiwei Liu, Sijin Wu",
+    "abstract": "Long-context modeling is becoming a core capability of modern large vision-language models (LVLMs), enabling sustained context management across long-document understanding, video analysis, and multi-turn tool use in agentic workflows. Yet practical training recipes remain insufficiently explored, particularly for designing and balancing long-context data mixtures. In this work, we present a systematic study of long-context continued pre-training for LVLMs, extending a 7B model from 32K to 128K context with extensive ablations on long-document data. We first show that long-document VQA is substantially more effective than OCR transcription. Building on this observation, our ablations further yield three key findings: i) for sequence-length distribution, balanced data outperforms target-length-focused data (e.g., 128K), suggesting that long-context ability requires generalizable key-information retrieval across various lengths and positions; ii) retrieval remains the primary bottleneck, favoring retrieval-heavy mixtures with modest reasoning data for task diversity; and iii) pure long-document VQA largely preserves short-context capabilities, suggesting that instruction-formatted long data reduces the need for short-data mixing. Based on these findings, we introduce MMProLong, obtained by long-context continued pre-training from Qwen2.5-VL-7B with only a 5B-token budget. MMProLong improves long-document VQA scores by 7.1% and maintains strong performance at 256K and 512K contexts beyond its 128K training window, without additional training. It further generalizes to webpage-based multimodal needle retrieval, long-context vision-text compression, and long-video understanding without task-specific supervision. Overall, our study establishes a practical LongPT recipe and an empirical foundation for advancing long-context vision-language models.",
+    "date": "2026-05-13",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "abs:\"agent\" AND abs:\"video understanding\""
+    ],
+    "score": 8
+  },
+  {
+    "id": "2605.00444",
+    "title": "Scaling Video Understanding via Compact Latent Multi-Agent Collaboration",
+    "authors": "Kerui Chen, Jinglu Wang, Jianrong Zhang, Ming Li, Yan Lu",
+    "abstract": "Multi-modal large language models (MLLMs) advance vision language understanding but face inherent limitations in long-video tasks due to bounded perception context budgets. Existing agentic methods mitigate this via rule-based preprocessing, yet often suffer from information loss, high cost, and reliance on textual intermediates. We propose MACF, an end-to-end Multi-Agent Collaboration Framework that decouples per-agent perception budgets from global video complexity, enabling scalable video understanding while preserving visual fidelity. MACF partitions videos into segments for locally budgeted agents and enables holistic reasoning via an agent-native latent communication protocol. Each agent encodes partial observations into compact, task-sufficient tokens in a shared embedding space, allowing efficient and information-preserving collaboration by a central coordinator. We introduce a curriculum training strategy that progressively enforces semantic alignment, evidence summarization, and cross-agent coordination. Extensive experiments on diverse video understanding benchmarks show that MACF consistently outperforms state-of-the-art MLLMs and multi-agent systems under identical budget constraints, demonstrating the effectiveness of our latent collaboration for scalable video understanding.",
+    "date": "2026-05-01",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"long video\"",
+      "abs:\"agent\" AND abs:\"video understanding\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 8
+  },
+  {
+    "id": "2605.04870",
+    "title": "VTAgent: Agentic Keyframe Anchoring for Evidence-Aware Video TextVQA",
+    "authors": "Haibin He, Maoyuan Ye, Jing Zhang, Juhua Liu, Bo Du",
+    "abstract": "Video text-based visual question answering (Video TextVQA) aims to answer questions by reasoning over visual textual content appearing in videos. Despite the strong multimodal video understanding capabilities of recent Video-LLMs, their performance on existing Video TextVQA benchmarks remains limited. To better understand this gap, we conduct an upper-bound analysis through frame-wise question answering, counting a sample as correct if any frame yields the right answer, which significantly outperforms direct video-based inference and reveals a substantial performance gap. The results suggest that the primary bottleneck lies in the localization of key question-relevant evidence, rather than in reasoning capacity itself. Building on this insight, we propose a question-guided agent framework that explicitly anchors the relevant keyframes before answering. The approach operates effectively in a training-free setting and consistently surpasses direct video inference. With additional supervised fine-tuning (SFT) and reinforcement learning (RL), it achieves an average improvement of +12.12 in accuracy and +11.15 in ANLS across benchmarks, establishing new state-of-the-art results. Our study underscores the critical role of explicit keyframe anchoring for advancing Video TextVQA. The code will be publicly released.",
+    "date": "2026-05-06",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"video understanding\"",
+      "abs:\"agent\" AND abs:\"video llm\"",
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 8
+  },
+  {
+    "id": "2605.02130",
+    "title": "From Where Things Are to What They Are For: Benchmarking Spatial-Functional Intelligence in Multimodal LLMs",
+    "authors": "Le Zhang, Jihan Yang, Soundarya Krishnan, Jimit Majmudar, Xiou Ge",
+    "abstract": "Human-level agentic intelligence extends beyond low-level geometric perception, evolving from recognizing where things are to understanding what they are for. While existing benchmarks effectively evaluate the geometric perception capabilities of multimodal large language models (MLLMs), they fall short of probing the higher-order cognitive abilities required for grounded intelligence. To address this gap, we introduce the Spatial-Functional Intelligence Benchmark (SFI-Bench), a video-based benchmark with over 1,500 expert-annotated questions derived from diverse egocentric indoor video scans. SFI-Bench systematically evaluates two complementary dimensions of advanced reasoning: (1) Structured Spatial Reasoning, which requires understanding complex layouts and forming coherent spatial representations, and (2) Functional Reasoning, which involves inferring object affordances and their context-dependent utility. The benchmark includes tasks such as conditional counting, multi-hop relational reasoning, functional pairing, and knowledge-grounded troubleshooting, directly challenging models to integrate perception, memory, and inference. Our experiments reveal that current MLLMs consistently struggle to combine spatial memory with functional reasoning and external knowledge, highlighting a critical bottleneck in achieving grounded intelligence. SFI-Bench therefore provides a diagnostic tool for measuring progress toward more cognitively capable and truly grounded multimodal agents.",
+    "date": "2026-05-04",
+    "matched_queries": [
+      "abs:\"multimodal agent\" AND abs:\"video\""
+    ],
+    "score": 8
+  },
+  {
+    "id": "2604.26752",
+    "title": "GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents",
+    "authors": "GLM-V Team,  :, Wenyi Hong, Xiaotao Gu, Ziyang Pan",
+    "abstract": "We present GLM-5V-Turbo, a step toward native foundation models for multimodal agents. As foundation models are increasingly deployed in real environments, agentic capability depends not only on language reasoning, but also on the ability to perceive, interpret, and act over heterogeneous contexts such as images, videos, webpages, documents, GUIs. GLM-5V-Turbo is built around this objective: multimodal perception is integrated as a core component of reasoning, planning, tool use, and execution, rather than as an auxiliary interface to a language model. This report summarizes the main improvements behind GLM-5V-Turbo across model design, multimodal training, reinforcement learning, toolchain expansion, and integration with agent frameworks. These developments lead to strong performance in multimodal coding, visual tool use, and framework-based agentic tasks, while preserving competitive text-only coding capability. More importantly, our development process offers practical insights for building multimodal agents, highlighting the central role of multimodal perception, hierarchical optimization, and reliable end-to-end verification.",
+    "date": "2026-04-29",
+    "matched_queries": [
+      "abs:\"multimodal agent\" AND abs:\"video\""
+    ],
+    "score": 8
+  },
+  {
+    "id": "2605.02939",
+    "title": "From Static Analysis to Audience Dissemination: A Training-Free Multimodal Controversy Detection Multi-Agent Framework",
+    "authors": "Zihan Ding, Ziyuan Yang, Yi Zhang",
+    "abstract": "Multimodal controversy detection (MCD) identifies controversial content in videos and their associated user comments, to support risk management for social video platforms.Prior research frames MCD as a static representation learning task, where features are directly extracted from videos and their accompanying comments. However, these methods fail to capture the diverse perspectives and evaluations from different audience groups. Inspired by the real-world process of content dissemination among audiences, we propose AuDisAgent, a training-free multi-agent framework that reformulates MCD as a dynamic propagation process.Our framework explicitly models audience dissemination through a structured multi-agent system. First, three specialized Screening Agents (Video Agent, Comment Agent, and Interaction Agent) conduct initial assessments from visual, textual, and cross-modal perspectives, respectively. For samples where the three agents cannot reach a consensus, a Viewing Panel Agent is activated to simulate post-screening discussions among audiences with diverse backgrounds and stances. This mechanism models how different audience groups interpret and react to the same content, uncovering latent controversial content that may emerge during the dissemination process. Finally, an Arbitration Agent renders the final judgment based on the complete reasoning chain from the preceding steps.In addition, to address the \"cold-start\" scenario where newly released videos have few or no comments, we design a Comment Bootstrapping Strategy that leverages historical public comments from semantically similar videos as the initial comment context. Extensive experiments on a public dataset demonstrate that our framework significantly outperforms existing state-of-the-art (SOTA) methods in both rich-comment and limited-comment scenarios.",
+    "date": "2026-05-01",
+    "matched_queries": [
+      "abs:\"video agent\"",
+      "abs:\"agentic video\""
+    ],
+    "score": 7
+  },
+  {
+    "id": "2605.18396",
+    "title": "NEWTON: Agentic Planning for Physically Grounded Video Generation",
+    "authors": "Yuxiang Feng, Juncheng Wang, Chao Xu, Yijie Qian, Huihan Wang",
+    "abstract": "Video generation models produce visually compelling results but systematically violate physical commonsense -- on VideoPhy-2, the best model achieves only 32.6% joint accuracy. We identify a specification bottleneck: text prompts are lossy compression of the physical world, omitting the parameters that fully determine dynamics, and no amount of model scaling can recover what was never specified. From this diagnosis we derive three properties that physics conditioning must satisfy -- sufficiency, dynamism, and verifiability -- and show that no existing approach satisfies all three. We present NEWTON, in which video generation is demoted from the system output to one action inside an agent's toolbox: a learned planner orchestrates physics-aware tools (keyframe generation, scientific computation, prompt refinement) to construct rich conditioning, and a verifier closes the loop for iterative re-planning. The planner is the sole trainable component, optimized on-policy via Flow-GRPO inside the live multi-turn loop. On VideoPhy-2, NEWTON improves joint accuracy from 21.4% to 29.7% on LTX-Video and from 30.7% to 37.4% on Veo-3.1, without modifying either generator. Our project page: https://Newton026.github.io/newton",
+    "date": "2026-05-18",
+    "matched_queries": [
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 7
+  },
+  {
+    "id": "2605.17921",
+    "title": "An Efficient Streaming Video Understanding Framework with Agentic Control",
+    "authors": "Jinming Liu, Jianguo Huang, Zhaoyang Jia, Jiahao Li, Xiaoyi Zhang",
+    "abstract": "Streaming video requires handling dynamic information density under strict latency budgets. Yet, existing methods typically employ static strategies, such as fixed memory compression or reliance on a single model, forcing a trade-off: fast models fail on complex queries, while always-on heavy models violate real-time constraints and overcomplicate simple queries. Rather than fixing these decisions upfront, we propose R3-Streaming (Remember, Respond, Reason), which formulates streaming video understanding as a cascaded control problem: for each query, the system compresses memory, judges response readiness, and routes computation sequentially, so that each downstream decision builds on progressively refined information states. To optimize this pipeline, we introduce an age-aware forgetting policy for memory compression, as aggressively compressing historical frames can yield substantial performance gains. For compute routing, we propose TB-GRPO, a target-balanced reinforcement learning objective that routes hard queries to a stronger model while preventing mode collapse. Extensive evaluations demonstrate that R3-Streaming achieves state-of-the-art results among streaming MLLMs, reaching 57.92 on OVO-Bench and 76.36 on StreamingBench, while reducing visual token usage by 95 to 96 percent.",
+    "date": "2026-05-18",
+    "matched_queries": [
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 7
+  },
+  {
+    "id": "2605.08762",
+    "title": "Omni-DeepSearch: A Benchmark for Audio-Driven Omni-Modal Deep Search",
+    "authors": "Tao Yu, yiming ding, Shenghua Chai, Minghui Zhang, Zhongtian Luo",
+    "abstract": "Current omni-modal benchmarks mainly evaluate models under settings where multiple modalities are provided simultaneously, while the ability to start from audio alone and actively search for cross-modal evidence remains underexplored. In this paper, we introduce \\textbf{Omni-DeepSearch}, a benchmark for audio-driven omni-modal deep search. Given one or more audio clips and a related question, models must infer useful clues from audio, invoke text, image, and video search tools, and perform multi-hop reasoning to produce a short, objective, and verifiable answer. Omni-DeepSearch contains 640 samples across 15 fine-grained categories, covering four retrieval target modalities and four audio content types. A multi-stage filtering pipeline ensures audio dependence, retrieval necessity, visual modality necessity, and answer uniqueness. Experiments on recent closed-source and open-source omni-modal models show that this task remains highly challenging: the strongest evaluated model, Gemini-3-Pro, achieves only 43.44\\% average accuracy. Further analyses illustrate key bottlenecks in audio entity inference, query formulation, tool-use reliability, multi-hop retrieval, and cross-modal verification. These results highlight audio-driven omni-modal deep search as an important and underexplored direction for future multimodal agents.",
+    "date": "2026-05-09",
+    "matched_queries": [
+      "abs:\"multimodal agent\" AND abs:\"video\""
+    ],
+    "score": 7
+  },
+  {
+    "id": "2605.10543",
+    "title": "TIE: Time Interval Encoding for Video Generation over Events",
+    "authors": "Zhilei Shu, Shangwen Zhu, Zihang Liang, Xiaofan Li, Qianyu Peng",
+    "abstract": "Director-style prompting, robotic action prediction, and interactive video agents demand temporal grounding over concurrent events -- a regime in which 68% of general clips and over 99% of robotics/gameplay clips contain overlapping events, yet existing multi-event generators rest on a single-active-prompt assumption. However, modern video generators, such as Diffusion Transformers (DiT), represent time as discrete points through point-wise positional encodings. This formulation creates a fundamental dimension mismatch: temporally extended intervals and overlapping events are mathematically unrepresentable to the attention mechanism. In this paper, we propose Time Interval Encoding (TIE), a principled, plug-and-play interval-aware generalization of rotary embeddings that elevates time intervals to first-class primitives inside DiT cross-attention. Rather than introducing another heuristic interval embedding, we show that, within RoPE-compatible bilinear attention, TIE is characterized by two basic principles: Temporal Integrability, which requires an event to aggregate positional evidence over its full duration, and Duration Invariance, which removes the trivial bias toward longer intervals. Under a uniform kernel, this characterization yields an efficient closed-form sinc-based solution that preserves the standard attention interface and naturally attenuates boundary noise through interval integration. Empirically, TIE preserves the visual quality of the base DiT model while substantially improving temporal controllability. In our experiments on the OmniEvents dataset, it improves human-verified Temporal Constraint Satisfaction Rate from 77.34% to 96.03% and reduces temporal boundary error from 0.261s to 0.073s, while also improving trajectory-level temporal alignment metrics. The code and dataset are available at https://github.com/MatrixTeam-AI/TIE.",
+    "date": "2026-05-11",
+    "matched_queries": [
+      "abs:\"video agent\""
+    ],
+    "score": 6
+  },
+  {
+    "id": "2605.16716",
+    "title": "MAVEN A Multi-Agent Framework for Multicultural Text-to-Video Generation",
+    "authors": "Shuowei Li, Yuming Zhao, Parth Bhalerao, Oana Ignat",
+    "abstract": "Text-to-video (T2V) generation has rapidly progressed in visual fidelity, yet its ability to faithfully represent multiple cultures within a single prompt remains underexplored. We introduce MAVEN, a multi-agent prompt refinement framework designed to improve cultural fidelity in both mono-cultural and cross-cultural T2V generation. MAVEN decomposes prompts into person, action, and location dimensions, handled by specialized agents operating in parallel or sequentially. To support systematic evaluation, we contribute a new benchmark of 243 culturally grounded prompts and 972 corresponding videos, spanning three cultures (Chinese, American, Romanian), three action categories, and both mono-cultural and cross-cultural scenarios. Evaluations combining CLIP-based metrics, VLM-as-judge assessments, and videoquality measures show that multi-agent refinement, particularly parallel specialization, significantly improves cultural relevance while preserving visual quality and temporal consistency. The dataset and code are available athttps://github.com/AIM-SCU/CRAFT",
+    "date": "2026-05-16",
+    "matched_queries": [
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 6
+  },
+  {
+    "id": "2605.13803",
+    "title": "EvoGround: Self-Evolving Video Agents for Video Temporal Grounding",
+    "authors": "Minjoon Jung, Byoung-Tak Zhang, Lorenzo Torresani",
+    "abstract": "Video temporal grounding (VTG) takes an untrimmed video and a natural-language query as input and localizes the temporal moment that best matches the query. Existing methods rely on large, task-specific datasets requiring costly manual annotation. We introduce EvoGround, a framework of two coupled self-evolving agents, a proposer and a solver, that learn temporal grounding from raw videos without any human-labeled data. The proposer generates query--moment pairs from raw videos, while the solver learns to ground them and feeds back signals that improve the proposer in return. Through this self-reinforcing reinforcement-learning loop, the two agents are initialized from the same backbone and mutually improve across iterations. Trained on 2.5K unlabeled videos, EvoGround matches or surpasses fully supervised models across multiple VTG benchmarks, while emerging as a state-of-the-art fine-grained video captioner without manual labels.",
+    "date": "2026-05-13",
+    "matched_queries": [
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 6
+  },
+  {
+    "id": "2605.10106",
+    "title": "ViSRA: A Video-based Spatial Reasoning Agent for Multi-modal Large Language Models",
+    "authors": "Tingshu Mou, Jiabo He, Renying Wang, Ce Liu, Hao Yang",
+    "abstract": "Recent advances in Multi-modal Large Language Models (MLLMs) target 3D spatial intelligence, yet the progress has been largely driven by post-training on curated benchmarks, leaving the inference-time approach relatively underexplored. In this paper, we take a training-free perspective and introduce ViSRA, a human-aligned Video-based Spatial Reasoning Agent, as a framework to probe the spatial reasoning mechanism of MLLMs. ViSRA elicits spatial reasoning in a modular and extensible manner by leveraging explicit spatial information from expert models, enabling a plug-and-play flexible paradigm. ViSRA offers two key advantages: (1) human-aligned and transferable 3D understanding rather than task-specific overfitting; and (2) no post-training computational cost along with heavy manual curation of spatial reasoning datasets. Experimental results demonstrate consistent improvement across a set of MLLMs on both existing benchmarks and unseen 3D spatial reasoning tasks, with ViSRA outperforming baselines by up to a 15.6% and 28.9% absolute margin respectively.",
+    "date": "2026-05-11",
+    "matched_queries": [
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 6
+  },
+  {
+    "id": "2605.00347",
+    "title": "Odysseus: Scaling VLMs to 100+ Turn Decision-Making in Games via Reinforcement Learning",
+    "authors": "Chengshuai Shi, Wenzhe Li, Xinran Liang, Yizhou Lu, Wenjia Yang",
+    "abstract": "Given the rapidly growing capabilities of vision-language models (VLMs), extending them to interactive decision-making tasks such as video games has emerged as a promising frontier. However, existing approaches either rely on large-scale supervised fine-tuning (SFT) on human trajectories or apply reinforcement learning (RL) only in relatively short-horizon settings (typically around 20--30 turns). In this work, we study RL-based training of VLMs for long-horizon decision-making in Super Mario Land, a visually grounded environment requiring 100+ turns of interaction with coordinated perception, reasoning, and action. We begin with a systematic investigation of key algorithmic components and propose an adapted variant of PPO with a lightweight turn-level critic, which substantially improves training stability and sample efficiency over critic-free methods such as GRPO and Reinforce++. We further show that pretrained VLMs provide strong action priors, significantly improving sample efficiency during RL training and reducing the need for manual design choices such as action engineering, compared to classical deep RL trained from scratch. Building on these insights, we introduce Odysseus, an open training framework for VLM agents, achieving substantial gains across multiple levels of the game and at least 3 times average game progresses than frontier models. Moreover, the trained models exhibit consistent improvements under both in-game and cross-game generalization settings, while maintaining general-domain capabilities. Overall, our results identify key ingredients for making RL stable and effective in long-horizon, multi-modal settings, and provide practical guidance for developing VLMs as embodied agents.",
+    "date": "2026-05-01",
+    "matched_queries": [
+      "abs:\"vlm agent\" AND abs:\"video\""
+    ],
+    "score": 6
+  },
+  {
+    "id": "2604.24808",
+    "title": "ITAS: A Multi-Agent Architecture for LLM-Based Intelligent Tutoring",
+    "authors": "Iizalaarab Elhaimeur, Nikos Chrisochoides",
+    "abstract": "Large language model tutors are easy to build in a notebook and hard to run in a real course. We describe ITAS (Intelligent Teaching Assistant System), a multi-agent tutoring system that a graduate quantum computing course used for a semester at Old Dominion University. The system has three layers. The teaching layer is a Spoke-and-Wheel of three parallel specialist agents (Video, Code, Guidance) followed by a Synthesizer, plus a separate autograder that evaluates both the correctness and the approach of checkpoint submissions. The operational layer is four Cloud Run microservices with session state in Cloud SQL and interaction events streamed through Pub/Sub to BigQuery. The feedback layer is a narrow-scope conversational agent that answers instructor questions over per-lesson pseudonymized event streams, addressing what we call the Blind Instructor Problem: LLM tutors accumulate more data about students than the instructor can reach through routine channels. The architecture is a direct response to specific failures of an earlier prototype, and we describe which of those fixes carried forward and which were dropped for this iteration. We report on a pilot deployment (five students, one course, one semester) interpreted as system-behavior evidence rather than learning-outcome evidence: the teaching layer handled 334 chat turns without the task-boundary hallucinations that domain consolidation would have risked, the operational layer captured 10,628 events across five modules, and the feedback layer surfaced two findings the instructor acted on mid-semester. We do not claim the pilot generalizes. We do claim that the system as described is one workable answer to the question of what an LLM-based ITS needs to look like end-to-end to run in a real course.",
+    "date": "2026-04-27",
+    "matched_queries": [
+      "abs:\"agentic video\""
+    ],
+    "score": 5
+  },
+  {
+    "id": "2605.11477",
+    "title": "LDDR: Linear-DPP-Based Dynamic-Resolution Frame Sampling for Video MLLMs",
+    "authors": "Jingfeng Chen, Jiawen Qian, Wendi Deng, Yinuo Guo, Jiaqi Yu",
+    "abstract": "Video understanding in multimodal large language models requires selecting informative frames from long, redundant videos under limited visual-token budgets. Existing methods often rely on uniform sampling, point-wise relevance scoring, chunk-wise selection, or agentic exploration, which either miss global dependencies or introduce substantial overhead. We propose LDDR (Linear DPP-Based Dynamic Resolution), a training-free, plug-and-play, and budget-aware video frame sampling framework. LDDR performs query-aware Determinantal Point Process (DPP) frame selection in a task-conditioned feature space, achieving a 3x runtime speedup over standard DPP baselines. It further introduces a Group DPP importance metric to guide frame retention and dynamic resolution allocation, assigning more tokens to informative, non-redundant frames while downscaling or pruning less useful ones. Across four video benchmarks spanning short-, medium-, and long-range videos, LDDR consistently outperforms the next-best baselines, achieving gains of 2.5 points under budget-constrained settings and 1.6 points in high-budget scenarios. These improvements are consistently observed across multiple MLLM backbones, including both open- and closed-source models. Qualitative analysis confirms that relevant frames are selected and allocated a higher budget, facilitating improved video understanding.",
+    "date": "2026-05-12",
+    "matched_queries": [
+      "abs:\"agent\" AND abs:\"video understanding\""
+    ],
+    "score": 5
+  },
+  {
+    "id": "2605.17423",
+    "title": "Soap2Soap: Long Cinematic Video Remaking via Multi-Agent Collaboration",
+    "authors": "Yiren Song, Huilin Zhong, Kevin Qinghong Lin, Haofan Wang, Mike Zheng Shou",
+    "abstract": "We study series-level cinematic remaking, a long-horizon video-to-video generation problem that localizes full episodes or films via stylization or actor replacement while strictly preserving narrative structure, motion choreography, and character identity across hundreds of shots. Existing video generation and editing pipelines often break down in this regime due to compounding identity drift, background mutation, and semantic erosion under large camera motions and viewpoint changes. We propose Soap2Soap, a multi-agent framework that enforces long-term language-visual consistency through a Dual-Bridge Consistency mechanism: a scene-aware JSON screenplay serving as a persistent semantic backbone, and dynamically allocated visual reference anchors at both scene and shot levels. To suppress drift before video synthesis, we introduce batch keyframe consistency, jointly generating multiple keyframes in a shared latent context via a grid-based formulation. A closed-loop verification agent further audits identity, stability, and alignment to trigger selective regeneration. Experiments on SoapBench demonstrate strong improvements over commercial video generation APIs in long-term consistency and narrative fidelity.",
+    "date": "2026-05-17",
+    "matched_queries": [
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 5
+  },
+  {
+    "id": "2604.24842",
+    "title": "Co-Director: Agentic Generative Video Storytelling",
+    "authors": "Yale Song, Yiwen Song, Nick Losier, Nathan Hodson, Ye Jin",
+    "abstract": "While diffusion models generate high-fidelity video clips, transforming them into coherent storytelling engines remains challenging. Current agentic pipelines automate this via chained modules but suffer from semantic drift and cascading failures due to independent, handcrafted prompting. We present Co-Director, a hierarchical multi-agent framework formalizing video storytelling as a global optimization problem. To ensure semantic coherence, we introduce hierarchical parameterization: a multi-armed bandit globally identifies promising creative directions, while a local multimodal self-refinement loop mitigates identity drift and ensures sequence-level consistency. This balances the exploration of novel narrative strategies with the exploitation of effective creative configurations. For evaluation, we introduce GenAD-Bench, a 400-scenario dataset of fictional products for personalized advertising. Experiments demonstrate that Co-Director significantly outperforms state-of-the-art baselines, offering a principled approach that seamlessly generalizes to broader cinematic narratives. Project Page: https://co-director-agent.github.io/",
+    "date": "2026-04-27",
+    "matched_queries": [
+      "ti:\"video\" AND ti:\"agent\""
+    ],
+    "score": 5
+  }
+]
